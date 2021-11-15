@@ -1,0 +1,5 @@
+rootProject.name = 'tripper'
+include 'api'
+include 'core'
+include 'web'
+include 'admin'
