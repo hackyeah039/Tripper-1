@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+war {
+    enabled = true
+}
+
+bootWar {
+    enabled = false
+}
+
+repositories {
+    maven { url "https://code.lds.org/nexus/content/groups/main-repo"}
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.session:spring-session-jdbc'
+    testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.h2database:h2'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
