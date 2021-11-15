@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default_layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:unless="${#lists.isEmpty(hotelList)}">
+    <div th:each="hotel : ${hotelList}">
+        <div>
+            <h5 class="card-title" th:text="'호텔명: '+${hotel.name}+'원'"></h5>
+            <p class="card-text" th:text="'이미지소스: '+${hotel.imgsrc}"></p>
+            <p class="card-text" th:text="'최저가: '+${hotel.lowestprice}"></p>
+        </div>
+        <br>
+    </div>
+</div>
+</body>
+</html>
